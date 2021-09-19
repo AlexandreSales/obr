@@ -1,0 +1,740 @@
+object FormMain: TFormMain
+  Left = 0
+  Top = 0
+  Caption = 'Camera'
+  ClientHeight = 411
+  ClientWidth = 1141
+  Padding.Left = 4.000000000000000000
+  Padding.Top = 4.000000000000000000
+  Padding.Right = 4.000000000000000000
+  Padding.Bottom = 4.000000000000000000
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object PanelTop: TPanel
+    Align = Top
+    Position.X = 4.000000000000000000
+    Position.Y = 4.000000000000000000
+    Size.Width = 1133.000000000000000000
+    Size.Height = 28.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object LabelCamera: TLabel
+      AutoSize = True
+      Position.X = 11.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 44.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'Camera:'
+    end
+    object ComboBoxCamera: TComboBox
+      Position.X = 64.000000000000000000
+      Position.Y = 3.000000000000000000
+      Size.Width = 265.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      OnChange = ComboBoxCameraChange
+      OnClick = ComboBoxCameraClick
+    end
+    object LabelFormat: TLabel
+      AutoSize = True
+      Position.X = 344.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 41.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'Format:'
+    end
+    object ComboBoxFormat: TComboBox
+      Enabled = False
+      Position.X = 400.000000000000000000
+      Position.Y = 3.000000000000000000
+      Size.Width = 121.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      OnChange = ComboBoxFormatChange
+    end
+    object LabelWrapMode: TLabel
+      AutoSize = True
+      Position.X = 544.000000000000000000
+      Position.Y = 5.000000000000000000
+      Size.Width = 66.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'Wrap mode:'
+    end
+    object ComboBoxWrapMode: TComboBox
+      Items.Strings = (
+        'Center'
+        'Fit'
+        'Original'
+        'Stretch'
+        'Tile')
+      ItemIndex = 1
+      Position.X = 624.000000000000000000
+      Position.Y = 3.000000000000000000
+      TabOrder = 5
+      OnChange = ComboBoxWrapModeChange
+    end
+    object ButtonSaveCurrentImage: TButton
+      Enabled = False
+      Position.X = 752.000000000000000000
+      Position.Y = 3.000000000000000000
+      Size.Width = 150.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 7
+      Text = 'Save current image'
+      OnClick = ButtonSaveCurrentImageClick
+    end
+  end
+  object PanelRight: TPanel
+    Align = Right
+    Position.X = 536.000000000000000000
+    Position.Y = 32.000000000000000000
+    Size.Width = 601.000000000000000000
+    Size.Height = 375.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object LabelBacklightCompensation: TLabel
+      AutoSize = True
+      Enabled = False
+      Position.X = 8.000000000000000000
+      Position.Y = 6.000000000000000000
+      Size.Width = 127.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'Backlight compensation'
+    end
+    object CheckBoxBacklightCompensation: TCheckBox
+      Enabled = False
+      Position.X = 240.000000000000000000
+      Position.Y = 6.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 20
+      Text = 'Auto'
+      OnChange = CheckBoxChange
+    end
+    object TrackBarBacklightCompensation: TTrackBar
+      CanParentFocus = True
+      Enabled = False
+      Orientation = Horizontal
+      Position.X = 8.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 281.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 34
+      OnChange = TrackBarChange
+    end
+    object LabelBrightness: TLabel
+      AutoSize = True
+      Enabled = False
+      Position.X = 8.000000000000000000
+      Position.Y = 46.000000000000000000
+      Size.Width = 56.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'Brightness'
+    end
+    object TrackBarBrightness: TTrackBar
+      CanParentFocus = True
+      Enabled = False
+      Orientation = Horizontal
+      Position.X = 8.000000000000000000
+      Position.Y = 64.000000000000000000
+      Size.Width = 281.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 32
+      OnChange = TrackBarChange
+    end
+    object CheckBoxBrightness: TCheckBox
+      Enabled = False
+      Position.X = 240.000000000000000000
+      Position.Y = 46.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 17
+      Text = 'Auto'
+      OnChange = CheckBoxChange
+    end
+    object LabelColorEnable: TLabel
+      AutoSize = True
+      Enabled = False
+      Position.X = 8.000000000000000000
+      Position.Y = 86.000000000000000000
+      Size.Width = 68.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'Color enable'
+    end
+    object TrackBarColorEnable: TTrackBar
+      CanParentFocus = True
+      Enabled = False
+      Orientation = Horizontal
+      Position.X = 8.000000000000000000
+      Position.Y = 104.000000000000000000
+      Size.Width = 281.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 31
+      OnChange = TrackBarChange
+    end
+    object CheckBoxColorEnable: TCheckBox
+      Enabled = False
+      Position.X = 240.000000000000000000
+      Position.Y = 86.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 14
+      Text = 'Auto'
+      OnChange = CheckBoxChange
+    end
+    object LabelContrast: TLabel
+      AutoSize = True
+      Enabled = False
+      Position.X = 8.000000000000000000
+      Position.Y = 126.000000000000000000
+      Size.Width = 45.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'Contrast'
+    end
+    object TrackBarContrast: TTrackBar
+      CanParentFocus = True
+      Enabled = False
+      Orientation = Horizontal
+      Position.X = 8.000000000000000000
+      Position.Y = 144.000000000000000000
+      Size.Width = 281.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 29
+      OnChange = TrackBarChange
+    end
+    object CheckBoxContrast: TCheckBox
+      Enabled = False
+      Position.X = 240.000000000000000000
+      Position.Y = 126.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 11
+      Text = 'Auto'
+      OnChange = CheckBoxChange
+    end
+    object LabelExposure: TLabel
+      AutoSize = True
+      Enabled = False
+      Position.X = 8.000000000000000000
+      Position.Y = 166.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'Exposure'
+    end
+    object TrackBarExposure: TTrackBar
+      CanParentFocus = True
+      Enabled = False
+      Orientation = Horizontal
+      Position.X = 8.000000000000000000
+      Position.Y = 184.000000000000000000
+      Size.Width = 281.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 27
+      OnChange = TrackBarChange
+    end
+    object CheckBoxExposure: TCheckBox
+      Enabled = False
+      Position.X = 240.000000000000000000
+      Position.Y = 166.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 9
+      Text = 'Auto'
+      OnChange = CheckBoxChange
+    end
+    object LabelFocus: TLabel
+      AutoSize = True
+      Enabled = False
+      Position.X = 8.000000000000000000
+      Position.Y = 206.000000000000000000
+      Size.Width = 31.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'Focus'
+    end
+    object TrackBarFocus: TTrackBar
+      CanParentFocus = True
+      Enabled = False
+      Orientation = Horizontal
+      Position.X = 8.000000000000000000
+      Position.Y = 224.000000000000000000
+      Size.Width = 281.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 26
+      OnChange = TrackBarChange
+    end
+    object CheckBoxFocus: TCheckBox
+      Enabled = False
+      Position.X = 240.000000000000000000
+      Position.Y = 206.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 7
+      Text = 'Auto'
+      OnChange = CheckBoxChange
+    end
+    object LabelGain: TLabel
+      AutoSize = True
+      Enabled = False
+      Position.X = 8.000000000000000000
+      Position.Y = 246.000000000000000000
+      Size.Width = 25.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'Gain'
+    end
+    object TrackBarGain: TTrackBar
+      CanParentFocus = True
+      Enabled = False
+      Orientation = Horizontal
+      Position.X = 8.000000000000000000
+      Position.Y = 264.000000000000000000
+      Size.Width = 281.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 24
+      OnChange = TrackBarChange
+    end
+    object CheckBoxGain: TCheckBox
+      Enabled = False
+      Position.X = 240.000000000000000000
+      Position.Y = 246.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 5
+      Text = 'Auto'
+      OnChange = CheckBoxChange
+    end
+    object LabelGamma: TLabel
+      AutoSize = True
+      Enabled = False
+      Position.X = 8.000000000000000000
+      Position.Y = 286.000000000000000000
+      Size.Width = 42.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'Gamma'
+    end
+    object TrackBarGamma: TTrackBar
+      CanParentFocus = True
+      Enabled = False
+      Orientation = Horizontal
+      Position.X = 8.000000000000000000
+      Position.Y = 304.000000000000000000
+      Size.Width = 281.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 23
+      OnChange = TrackBarChange
+    end
+    object CheckBoxGamma: TCheckBox
+      Enabled = False
+      Position.X = 240.000000000000000000
+      Position.Y = 286.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      Text = 'Auto'
+      OnChange = CheckBoxChange
+    end
+    object LabelHue: TLabel
+      AutoSize = True
+      Enabled = False
+      Position.X = 8.000000000000000000
+      Position.Y = 326.000000000000000000
+      Size.Width = 22.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'Hue'
+    end
+    object TrackBarHue: TTrackBar
+      CanParentFocus = True
+      Enabled = False
+      Orientation = Horizontal
+      Position.X = 8.000000000000000000
+      Position.Y = 344.000000000000000000
+      Size.Width = 281.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 21
+      OnChange = TrackBarChange
+    end
+    object CheckBoxHue: TCheckBox
+      Enabled = False
+      Position.X = 240.000000000000000000
+      Position.Y = 326.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Auto'
+      OnChange = CheckBoxChange
+    end
+    object LabelIris: TLabel
+      AutoSize = True
+      Enabled = False
+      Position.X = 312.000000000000000000
+      Position.Y = 6.000000000000000000
+      Size.Width = 16.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'Iris'
+    end
+    object TrackBarIris: TTrackBar
+      CanParentFocus = True
+      Enabled = False
+      Orientation = Horizontal
+      Position.X = 312.000000000000000000
+      Position.Y = 24.000000000000000000
+      Size.Width = 281.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 33
+      OnChange = TrackBarChange
+    end
+    object CheckBoxIris: TCheckBox
+      Enabled = False
+      Position.X = 544.000000000000000000
+      Position.Y = 6.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 18
+      Text = 'Auto'
+      OnChange = CheckBoxChange
+    end
+    object LabelPan: TLabel
+      AutoSize = True
+      Enabled = False
+      Position.X = 312.000000000000000000
+      Position.Y = 46.000000000000000000
+      Size.Width = 20.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'Pan'
+    end
+    object CheckBoxPan: TCheckBox
+      Enabled = False
+      Position.X = 544.000000000000000000
+      Position.Y = 46.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 15
+      Text = 'Auto'
+      OnChange = CheckBoxChange
+    end
+    object TrackBarPan: TTrackBar
+      CanParentFocus = True
+      Enabled = False
+      Orientation = Horizontal
+      Position.X = 312.000000000000000000
+      Position.Y = 64.000000000000000000
+      Size.Width = 281.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 30
+      OnChange = TrackBarChange
+    end
+    object LabelRoll: TLabel
+      AutoSize = True
+      Enabled = False
+      Position.X = 312.000000000000000000
+      Position.Y = 86.000000000000000000
+      Size.Width = 20.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'Roll'
+    end
+    object TrackBarRoll: TTrackBar
+      CanParentFocus = True
+      Enabled = False
+      Orientation = Horizontal
+      Position.X = 312.000000000000000000
+      Position.Y = 104.000000000000000000
+      Size.Width = 281.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 28
+      OnChange = TrackBarChange
+    end
+    object CheckBoxRoll: TCheckBox
+      Enabled = False
+      Position.X = 544.000000000000000000
+      Position.Y = 86.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 12
+      Text = 'Auto'
+      OnChange = CheckBoxChange
+    end
+    object LabelSaturation: TLabel
+      AutoSize = True
+      Enabled = False
+      Position.X = 312.000000000000000000
+      Position.Y = 126.000000000000000000
+      Size.Width = 55.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'Saturation'
+    end
+    object TrackBarSaturation: TTrackBar
+      CanParentFocus = True
+      Enabled = False
+      Orientation = Horizontal
+      Position.X = 312.000000000000000000
+      Position.Y = 144.000000000000000000
+      Size.Width = 281.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 25
+      OnChange = TrackBarChange
+    end
+    object CheckBoxSaturation: TCheckBox
+      Enabled = False
+      Position.X = 544.000000000000000000
+      Position.Y = 126.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 10
+      Text = 'Auto'
+      OnChange = CheckBoxChange
+    end
+    object LabelSharpness: TLabel
+      AutoSize = True
+      Enabled = False
+      Position.X = 312.000000000000000000
+      Position.Y = 166.000000000000000000
+      Size.Width = 54.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'Sharpness'
+    end
+    object TrackBarSharpness: TTrackBar
+      CanParentFocus = True
+      Enabled = False
+      Orientation = Horizontal
+      Position.X = 312.000000000000000000
+      Position.Y = 184.000000000000000000
+      Size.Width = 281.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 22
+      OnChange = TrackBarChange
+    end
+    object CheckBoxSharpness: TCheckBox
+      Enabled = False
+      Position.X = 544.000000000000000000
+      Position.Y = 166.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 8
+      Text = 'Auto'
+      OnChange = CheckBoxChange
+    end
+    object LabelTilt: TLabel
+      AutoSize = True
+      Enabled = False
+      Position.X = 312.000000000000000000
+      Position.Y = 206.000000000000000000
+      Size.Width = 17.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'Tilt'
+    end
+    object TrackBarTilt: TTrackBar
+      CanParentFocus = True
+      Enabled = False
+      Orientation = Horizontal
+      Position.X = 312.000000000000000000
+      Position.Y = 224.000000000000000000
+      Size.Width = 281.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 19
+      OnChange = TrackBarChange
+    end
+    object CheckBoxTilt: TCheckBox
+      Enabled = False
+      Position.X = 544.000000000000000000
+      Position.Y = 206.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 6
+      Text = 'Auto'
+      OnChange = CheckBoxChange
+    end
+    object LabelWhiteBalance: TLabel
+      AutoSize = True
+      Enabled = False
+      Position.X = 312.000000000000000000
+      Position.Y = 246.000000000000000000
+      Size.Width = 76.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'White balance'
+    end
+    object TrackBarWhiteBalance: TTrackBar
+      CanParentFocus = True
+      Enabled = False
+      Orientation = Horizontal
+      Position.X = 312.000000000000000000
+      Position.Y = 264.000000000000000000
+      Size.Width = 281.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 16
+      OnChange = TrackBarChange
+    end
+    object CheckBoxWhiteBalance: TCheckBox
+      Enabled = False
+      Position.X = 544.000000000000000000
+      Position.Y = 246.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 4
+      Text = 'Auto'
+      OnChange = CheckBoxChange
+    end
+    object LabelZoom: TLabel
+      AutoSize = True
+      Enabled = False
+      Position.X = 312.000000000000000000
+      Position.Y = 286.000000000000000000
+      Size.Width = 32.000000000000000000
+      Size.Height = 16.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.WordWrap = False
+      Text = 'Zoom'
+    end
+    object TrackBarZoom: TTrackBar
+      CanParentFocus = True
+      Enabled = False
+      Orientation = Horizontal
+      Position.X = 312.000000000000000000
+      Position.Y = 304.000000000000000000
+      Size.Width = 281.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 13
+      OnChange = TrackBarChange
+    end
+    object CheckBoxZoom: TCheckBox
+      Enabled = False
+      Position.X = 544.000000000000000000
+      Position.Y = 286.000000000000000000
+      Size.Width = 57.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      Text = 'Auto'
+      OnChange = CheckBoxChange
+    end
+    object ButtonDefaultValues: TButton
+      Enabled = False
+      Position.X = 392.000000000000000000
+      Position.Y = 336.000000000000000000
+      Size.Width = 150.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 51
+      Text = 'Default values'
+      OnClick = ButtonDefaultValuesClick
+    end
+  end
+  object Timer: TTimer
+    Enabled = False
+    Interval = 25
+    OnTimer = TimerTimer
+    Left = 120
+    Top = 72
+  end
+  object PanelImage: TPanel
+    Align = Client
+    Size.Width = 532.000000000000000000
+    Size.Height = 375.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 6
+    object Image: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Align = Client
+      DisableInterpolation = True
+      Size.Width = 532.000000000000000000
+      Size.Height = 358.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object LabelBarcode: TLabel
+      Align = Bottom
+      Position.Y = 358.000000000000000000
+      Size.Width = 532.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.HorzAlign = Center
+    end
+  end
+  object FCamera: TFCamera
+    BorderColor = claNull
+    OnImageAvailable = FCameraImageAvailable
+    Left = 48
+    Top = 72
+  end
+  object FObr: TFObr
+    Left = 48
+    Top = 136
+  end
+end

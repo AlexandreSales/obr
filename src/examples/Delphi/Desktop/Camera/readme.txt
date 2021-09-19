@@ -1,0 +1,1 @@
+This demo example requires Camera for FireMonkey component available at http://winsoft.sk/fcamera.htm

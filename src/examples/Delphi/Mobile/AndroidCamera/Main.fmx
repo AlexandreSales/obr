@@ -1,0 +1,73 @@
+object FormMain: TFormMain
+  Left = 0
+  Top = 0
+  Caption = 'Camera demo'
+  ClientHeight = 480
+  ClientWidth = 329
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 3
+  object Image: TImage
+    MultiResBitmap = <
+      item
+      end>
+    Align = Client
+    Size.Width = 329.000000000000000000
+    Size.Height = 480.000000000000000000
+    Size.PlatformDefault = False
+    WrapMode = Center
+    object ButtonSettings: TButton
+      Position.X = 8.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 140.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Settings...'
+      OnClick = ButtonSettingsClick
+    end
+    object ButtonStartStop: TButton
+      Enabled = False
+      Position.X = 152.000000000000000000
+      Position.Y = 2.000000000000000000
+      Size.Width = 140.000000000000000000
+      Size.Height = 48.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      Text = 'Start'
+      OnClick = ButtonStartStopClick
+    end
+    object LabelBarcode: TLabel
+      Align = Client
+      StyledSettings = [Family, Size, Style]
+      Size.Width = 329.000000000000000000
+      Size.Height = 480.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.FontColor = claGreen
+      TextSettings.HorzAlign = Center
+      TextSettings.VertAlign = Trailing
+    end
+  end
+  object Rectangle: TRectangle
+    Anchors = []
+    Corners = []
+    Fill.Color = claRed
+    HitTest = False
+    Opacity = 0.300000011920929000
+    Position.X = 88.000000000000000000
+    Position.Y = 200.000000000000000000
+    Sides = []
+    Size.Width = 137.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Color = claNull
+    Visible = False
+  end
+  object ACamera: TACamera
+    OnDataReady = ACameraDataReady
+    Left = 32
+    Top = 80
+  end
+end

@@ -1,0 +1,1 @@
+This project requires Camera for Android component: http://www.winsoft.com/acamera.htm

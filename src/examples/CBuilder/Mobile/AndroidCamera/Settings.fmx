@@ -1,0 +1,209 @@
+object FormSettings: TFormSettings
+  Left = 0
+  Top = 0
+  Caption = 'Settings'
+  ClientHeight = 609
+  ClientWidth = 342
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 3
+  object VertScrollBox: TVertScrollBox
+    Align = Client
+    Padding.Left = 32.000000000000000000
+    Padding.Right = 32.000000000000000000
+    Padding.Bottom = 32.000000000000000000
+    Size.Width = 342.000000000000000000
+    Size.Height = 561.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    AutoHide = False
+    Viewport.Width = 337.000000000000000000
+    Viewport.Height = 556.000000000000000000
+    object ComboBoxCamera: TComboBox
+      Align = Top
+      Position.X = 32.000000000000000000
+      Position.Y = 23.000000000000000000
+      Size.Width = 273.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      OnChange = ComboBoxCameraChange
+    end
+    object ComboBoxFlashMode: TComboBox
+      Align = Top
+      Position.X = 32.000000000000000000
+      Position.Y = 255.000000000000000000
+      Size.Width = 273.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      OnChange = ComboBoxFlashModeChange
+    end
+    object ComboBoxFocusMode: TComboBox
+      Align = Top
+      Position.X = 32.000000000000000000
+      Position.Y = 192.000000000000000000
+      Size.Width = 273.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 2
+      OnChange = ComboBoxFocusModeChange
+    end
+    object ComboBoxPreviewSize: TComboBox
+      Align = Top
+      Position.X = 32.000000000000000000
+      Position.Y = 86.000000000000000000
+      Size.Width = 273.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      OnChange = ComboBoxPreviewSizeChange
+    end
+    object LabelCamera: TLabel
+      Align = Top
+      Position.X = 32.000000000000000000
+      Size.Width = 273.000000000000000000
+      Size.Height = 23.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Camera'
+    end
+    object LabelFlashMode: TLabel
+      Align = Top
+      Margins.Top = 8.000000000000000000
+      Position.X = 32.000000000000000000
+      Position.Y = 232.000000000000000000
+      Size.Width = 273.000000000000000000
+      Size.Height = 23.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Flash mode'
+    end
+    object LabelFocusMode: TLabel
+      Align = Top
+      Margins.Top = 8.000000000000000000
+      Position.X = 32.000000000000000000
+      Position.Y = 169.000000000000000000
+      Size.Width = 273.000000000000000000
+      Size.Height = 23.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Focus mode'
+    end
+    object LabelPreviewSize: TLabel
+      Align = Top
+      Margins.Top = 8.000000000000000000
+      Position.X = 32.000000000000000000
+      Position.Y = 63.000000000000000000
+      Size.Width = 273.000000000000000000
+      Size.Height = 23.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Preview size'
+    end
+    object LabelProperties: TLabel
+      Align = Top
+      Margins.Top = 8.000000000000000000
+      Position.X = 32.000000000000000000
+      Position.Y = 484.000000000000000000
+      Size.Width = 273.000000000000000000
+      Size.Height = 23.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Properties'
+    end
+    object MemoProperties: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      ReadOnly = True
+      Align = Top
+      Position.X = 32.000000000000000000
+      Position.Y = 507.000000000000000000
+      Size.Width = 273.000000000000000000
+      Size.Height = 300.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 9
+      Viewport.Width = 265.000000000000000000
+      Viewport.Height = 292.000000000000000000
+    end
+    object ComboBoxColorEffect: TComboBox
+      Align = Top
+      Position.X = 32.000000000000000000
+      Position.Y = 318.000000000000000000
+      Size.Width = 273.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 10
+      OnChange = ComboBoxColorEffectChange
+    end
+    object LabelColorEffect: TLabel
+      Align = Top
+      Margins.Top = 8.000000000000000000
+      Position.X = 32.000000000000000000
+      Position.Y = 295.000000000000000000
+      Size.Width = 273.000000000000000000
+      Size.Height = 23.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Color effect'
+    end
+    object ComboBoxAntibanding: TComboBox
+      Align = Top
+      Position.X = 32.000000000000000000
+      Position.Y = 381.000000000000000000
+      Size.Width = 273.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 12
+      OnChange = ComboBoxAntibandingChange
+    end
+    object LabelAntibanding: TLabel
+      Align = Top
+      Margins.Top = 8.000000000000000000
+      Position.X = 32.000000000000000000
+      Position.Y = 358.000000000000000000
+      Size.Width = 273.000000000000000000
+      Size.Height = 23.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'Antibanding'
+    end
+    object ComboBoxWhiteBalance: TComboBox
+      Align = Top
+      Position.X = 32.000000000000000000
+      Position.Y = 444.000000000000000000
+      Size.Width = 273.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 14
+      OnChange = ComboBoxWhiteBalanceChange
+    end
+    object LabelWhiteBalance: TLabel
+      Align = Top
+      Margins.Top = 8.000000000000000000
+      Position.X = 32.000000000000000000
+      Position.Y = 421.000000000000000000
+      Size.Width = 273.000000000000000000
+      Size.Height = 23.000000000000000000
+      Size.PlatformDefault = False
+      Text = 'White balance'
+    end
+    object CheckBoxStretchToScreen: TCheckBox
+      Align = Top
+      Margins.Top = 16.000000000000000000
+      Margins.Bottom = 8.000000000000000000
+      Position.X = 32.000000000000000000
+      Position.Y = 134.000000000000000000
+      Size.Width = 273.000000000000000000
+      Size.Height = 19.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 16
+      Text = 'Stretch to screen'
+      OnChange = CheckBoxStretchToScreenChange
+    end
+  end
+  object ButtonOk: TButton
+    Align = Top
+    Size.Width = 342.000000000000000000
+    Size.Height = 48.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 3
+    Text = 'OK'
+    OnClick = ButtonOkClick
+  end
+end

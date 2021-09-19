@@ -1,0 +1,93 @@
+object FormMain: TFormMain
+  Left = 0
+  Top = 0
+  Caption = 'Optical Barcode Recognition'
+  ClientHeight = 480
+  ClientWidth = 640
+  Position = ScreenCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop, iPhone, iPad]
+  DesignerMasterStyle = 0
+  object PanelTop: TPanel
+    Align = Top
+    Margins.Left = 4.000000000000000000
+    Margins.Top = 4.000000000000000000
+    Margins.Right = 4.000000000000000000
+    Position.X = 4.000000000000000000
+    Position.Y = 4.000000000000000000
+    Size.Width = 632.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object ButtonStartStop: TButton
+      Anchors = [akLeft, akTop, akRight]
+      Position.X = 256.000000000000000000
+      Position.Y = 6.000000000000000000
+      Size.Width = 137.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = 'Start'
+      OnClick = ButtonStartStopClick
+    end
+  end
+  object PanelBottom: TPanel
+    Align = Bottom
+    Margins.Left = 4.000000000000000000
+    Margins.Top = 4.000000000000000000
+    Margins.Right = 4.000000000000000000
+    Margins.Bottom = 4.000000000000000000
+    Position.X = 4.000000000000000000
+    Position.Y = 356.000000000000000000
+    Size.Width = 632.000000000000000000
+    Size.Height = 120.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object Memo: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      ReadOnly = True
+      Align = Client
+      Size.Width = 632.000000000000000000
+      Size.Height = 120.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Viewport.Width = 628.000000000000000000
+      Viewport.Height = 116.000000000000000000
+    end
+  end
+  object ScrollBox: TScrollBox
+    Align = Client
+    Margins.Left = 4.000000000000000000
+    Margins.Top = 4.000000000000000000
+    Margins.Right = 4.000000000000000000
+    Size.Width = 632.000000000000000000
+    Size.Height = 311.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Viewport.Width = 632.000000000000000000
+    Viewport.Height = 311.000000000000000000
+    object Image: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Align = Client
+      MarginWrapMode = Center
+      Size.Width = 632.000000000000000000
+      Size.Height = 311.000000000000000000
+      Size.PlatformDefault = False
+      WrapMode = Center
+    end
+  end
+  object CameraComponent: TCameraComponent
+    OnSampleBufferReady = CameraComponentSampleBufferReady
+    Left = 132
+    Top = 49
+  end
+  object FObr: TFObr
+    OnBarcodeDetected = FObrBarcodeDetected
+    Left = 40
+    Top = 48
+  end
+end
